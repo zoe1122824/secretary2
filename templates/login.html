@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Log-in{% endblock %}
+
+{% block content %}
+<h1>Log-in</h1>
+{% if message %}
+        <p>
+        帳號或密碼錯誤，請再試一次。
+        </p>
+{% else %}
+<p>請輸入帳號與密碼登入系統。</p>
+{% endif %}
+<div class="login-form">
+        <form action="." method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="登入"></p>
+        </form>
+</div>
+{% endblock %}
